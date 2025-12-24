@@ -1,0 +1,134 @@
+# 🏥 Medical Insurance Risk Prediction API  
+Built with **FastAPI + Machine Learning + Docker**
+
+This project provides a production-ready **REST API** that predicts whether a user falls into **High Risk or Low Risk** category for medical insurance risk.  
+It uses a trained Logistic Regression model and exposes prediction endpoints via **FastAPI**, making it easy for developers and applications to consume.
+
+---
+
+## 🚀 Features
+- ⚡ FastAPI-powered REST API (automatic docs with Swagger & ReDoc)
+- 🤖 Machine Learning powered predictions
+- 🎯 Two Prediction Modes  
+  - `/predict` → Default threshold  
+  - `/predict/high_risk` → Uses a stricter threshold (0.30) to detect high risk early  
+- 🟢 `/health` endpoint to verify API is running
+- 🐳 Docker-ready for easy deployment
+- ☁️ Can be deployed to **AWS EC2 / Render / Railway**
+- 🎨 (Upcoming) Streamlit UI frontend
+
+---
+
+## 📸 Screenshots
+
+#### 🔹 Swagger UI Overview
+![Swagger UI]("Insurance_risk_prediction\images\1.png")
+
+#### 🔹 Default Risk Prediction – Request
+![Predict Request](assets/screenshots/predict_request.png)
+
+#### 🔹 Default Risk Prediction – Response
+![Predict Response](assets/screenshots/predict_response.png)
+
+#### 🔹 High Risk Threshold Request
+![High Risk Request](assets/screenshots/highrisk_request.png)
+
+#### 🔹 High Risk Threshold Response
+![High Risk Response](assets/screenshots/highrisk_response.png)
+
+#### 🐳 Docker Running
+![Docker Running](assets/screenshots/docker_running.png)
+
+## 🧠 How Risk Prediction Works
+The model predicts **probability of high risk**.  
+Then based on probability and threshold:
+
+| Endpoint | Threshold Used | Output |
+|--------|----------------|--------|
+| `/predict` | Default model threshold | High Risk / Low Risk |
+| `/predict/high_risk` | `0.30` | More sensitive to detect high-risk early |
+
+Example response:
+```json
+{
+  "predicted_category": "Low Risk",
+  "probability_high_risk": 0.1396,
+  "threshold_used": 0.3
+}
+```
+
+## 📦 Project Structure
+
+```
+.
+insurance_risk_prediction
+│── app.py                 # FastAPI main app
+│── requirements.txt
+│── Dockerfile
+│── README.md
+|__ dockerignore
+│__ images
+|
+│── model/
+│     ├── insurance_risk_pipeline.pkl
+│     ├── predict.py
+│
+│── schema/
+│     ├── user_input_pydantic.py
+│     ├── prediction.py
+```
+## ▶️ Run Locally
+### 1️⃣ Clone Repo
+
+### 2️⃣ Install Dependencies
+
+pip install -r requirements.txt
+
+### 3️⃣ Run FastAPI App
+
+uvicorn main:app --reload
+
+### 4️⃣ Open in Browser
+
+Swagger Docs:
+
+http://127.0.0.1:8000/docs
+
+### 🐳 Run with Docker (Optional)
+
+docker build -t insurance-risk-api .
+
+Run container:
+
+docker run -p 8000:8000 insurance-risk-api
+
+### 🌍 Deployment
+
+` This API can easily be deployed to:
+` AWS EC2
+` Render
+` Railway
+` Azure App Service
+` Google Cloud Run
+` Once hosted, it becomes publicly accessible without users needing Docker
+
+## 📮 API Endpoints
+| Method | Endpoint             | Description             |
+| ------ | -------------------- | ----------------------- |
+| GET    | `/`                  | Welcome                 |
+| GET    | `/health`            | Health Check            |
+| POST   | `/predict`           | Default Risk Prediction |
+| POST   | `/predict/high_risk` | Threshold = 0.30        |
+
+## 🛠️ Tech Stack
+
+` Python
+` FastAPI
+` Logistic Regression (Sklearn)
+` Docker
+` Uvicorn
+
+### ✨ Future Enhancements
+
+` 🚀 Deploy on AWS EC2
+` 🎨 Streamlit Web UI
