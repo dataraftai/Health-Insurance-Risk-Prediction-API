@@ -22,22 +22,20 @@ It uses a trained Logistic Regression model and exposes prediction endpoints via
 ## 📸 Screenshots
 
 #### 🔹 Swagger UI Overview
-![Swagger UI]("Insurance_risk_prediction\images\1.png")
+![Swagger UI](images/1.png)
 
 #### 🔹 Default Risk Prediction – Request
-![Predict Request](assets/screenshots/predict_request.png)
+![Predict Request](images/predict_request.png.png)
 
 #### 🔹 Default Risk Prediction – Response
-![Predict Response](assets/screenshots/predict_response.png)
+![Predict Response](images/3.png)
 
 #### 🔹 High Risk Threshold Request
-![High Risk Request](assets/screenshots/highrisk_request.png)
+![High Risk Request](images/highrequest.png.png)
 
 #### 🔹 High Risk Threshold Response
-![High Risk Response](assets/screenshots/highrisk_response.png)
+![High Risk Response](images/high-responce.png)
 
-#### 🐳 Docker Running
-![Docker Running](assets/screenshots/docker_running.png)
 
 ## 🧠 How Risk Prediction Works
 The model predicts **probability of high risk**.  
