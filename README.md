@@ -24,17 +24,18 @@ It uses a trained Logistic Regression model and exposes prediction endpoints via
 #### 🔹 Swagger UI Overview
 ![Swagger UI](images/1.png)
 
-#### 🔹 Default Risk Prediction – Request
-![Predict Request](images/predict_request.png.png)
+### 🔹 Default Prediction
 
-#### 🔹 Default Risk Prediction – Response
-![Predict Response](images/3.png)
+| Request | Response |
+|--------|---------|
+| <img src="images/predict_request.png.png" width="420"> | <img src="images/3.png" width="420"> |
 
-#### 🔹 High Risk Threshold Request
-![High Risk Request](images/highrequest.png.png)
 
-#### 🔹 High Risk Threshold Response
-![High Risk Response](images/high-responce.png)
+### 🔹 High Risk Prediction (Threshold 0.30)
+
+| Request | Response |
+|--------|---------|
+| <img src="images/highrequest.png" width="420"> | <img src="images/high-responce.png" width="420"> |
 
 
 ## 🧠 How Risk Prediction Works
@@ -64,7 +65,7 @@ insurance_risk_prediction
 │── requirements.txt
 │── Dockerfile
 │── README.md
-|__ dockerignore
+|__ .dockerignore
 │__ images
 |
 │── model/
@@ -92,23 +93,30 @@ Swagger Docs:
 
 http://127.0.0.1:8000/docs
 
-### 🐳 Run with Docker (Optional)
+## 🐳 Docker Hub
 
-docker build -t insurance-risk-api .
+You can directly pull and run the API image from Docker Hub:
 
-Run container:
+🔗 Docker Hub Repository:
+https://hub.docker.com/r/<dataforai>/insurance-risk-api
 
-docker run -p 8000:8000 insurance-risk-api
+## 🐳 Run with Docker
+
+### Pull Image
+docker pull <dataforai>/insurance-risk-api:latest
+
+### Run Container
+docker run -p 8000:8000 <dataforai>/insurance-risk-api:latest
 
 ### 🌍 Deployment
 
-` This API can easily be deployed to:
-` AWS EC2
-` Render
-` Railway
-` Azure App Service
-` Google Cloud Run
-` Once hosted, it becomes publicly accessible without users needing Docker
+This project is fully **deployment-ready** and can be hosted on:
+- AWS EC2    
+- Render
+- Railway
+- Azure App Service
+- Google Cloud Run
+- Once hosted, it becomes publicly accessible without users needing Docker
 
 ## 📮 API Endpoints
 | Method | Endpoint             | Description             |
@@ -120,13 +128,13 @@ docker run -p 8000:8000 insurance-risk-api
 
 ## 🛠️ Tech Stack
 
-` Python
-` FastAPI
-` Logistic Regression (Sklearn)
-` Docker
-` Uvicorn
+- Python
+- FastAPI
+- Logistic Regression (Sklearn)
+- Docker
+- Uvicorn
 
 ### ✨ Future Enhancements
 
-` 🚀 Deploy on AWS EC2
-` 🎨 Streamlit Web UI
+- 🚀 Deploy on AWS EC2  (Learning)
+- 🎨 Streamlit Web UI
