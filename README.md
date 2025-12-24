@@ -98,7 +98,7 @@ http://127.0.0.1:8000/docs
 You can directly pull and run the API image from Docker Hub:
 
 🔗 Docker Hub Repository:
-https://hub.docker.com/r/<dataforai>/insurance-risk-api
+https://hub.docker.com/r/dataforai/insurance-risk-api
 
 ## 🐳 Run with Docker
 
