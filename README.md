@@ -77,17 +77,17 @@ insurance_risk_prediction
 │     ├── prediction.py
 ```
 ## ▶️ Run Locally
-### 1️⃣ Clone Repo
+### 1️ Clone Repo
 
-### 2️⃣ Install Dependencies
+### 2️ Install Dependencies
 
 pip install -r requirements.txt
 
-### 3️⃣ Run FastAPI App
+### 3️ Run FastAPI App
 
 uvicorn main:app --reload
 
-### 4️⃣ Open in Browser
+### 4️ Open in Browser
 
 Swagger Docs:
 
